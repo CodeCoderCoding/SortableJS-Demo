@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>开始使用 layui</title>
+    <link href="../layui/css/layui.css" rel="stylesheet">
+</head>
+<body>
+
+<ul class="layui-nav layui-nav-tree list1" lay-filter="test">
+    <li class="layui-nav-item layui-nav-itemed list1">
+        <a href="javascript:;">列表1</a>
+        <dl class="layui-nav-child list1">
+            <dd><a href="javascript:;">列表1项目1</a></dd>
+            <dd><a href="javascript:;">列表1项目2</a></dd>
+            <dd><a href="javascript:;">列表1项目3</a></dd>
+        </dl>
+    </li>
+    <li class="layui-nav-item list1">
+        <a href="javascript:;">列表2</a>
+        <dl class="layui-nav-child list1">
+            <dd><a href="javascript:;">列表2项目1</a></dd>
+            <dd><a href="javascript:;">列表2项目2</a></dd>
+            <dd><a href="javascript:;">列表2项目3</a></dd>
+        </dl>
+    </li>
+    <li class="layui-nav-item list1"><a href="javascript:;">列表3</a></li>
+    <li class="layui-nav-item list1"><a href="javascript:;">列表4</a></li>
+</ul>
+
+<script src="../layui/layui.js"></script>
+<script>
+    layui.use(['layer', 'form', 'element'], function(){
+        var layer = layui.layer;
+        var form = layui.form;
+        layer.msg('Hello World');
+    });
+</script>
+
+<script src="../Source-Code/Sortable.min.js"></script>
+
+<script type="text/javascript">
+    var elements = document.getElementsByClassName('list1');
+    for (var i = 0; i < elements.length; i++) {
+        new Sortable(elements[i], {
+            group: 'shared',
+            invertSwap: true
+        });
+    }
+</script>
+
+</body>
+</html>
